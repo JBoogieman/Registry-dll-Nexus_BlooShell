@@ -12,11 +12,11 @@ full Blue Team detection instrumentation (Sysmon, Procmon, Autoruns).
 - Mason Wagner
 
 ## Structure
-- `src/` - DLL source code (C++)
-- `configs/` - Sysmon XML configuration
-- `evidence/` - Screenshots, logs, Procmon exports
-- `docs/` - Report and presentation files
-- `scripts/` - Automation scripts
+- `src` - DLL source code (C++)
+- `configs` - Sysmon XML configuration
+- `evidence` - Screenshots, logs, Procmon exports
+- `docs` - Report and presentation files
+- `scripts` - Automation scripts
 
 ## MITRE ATT&CK Techniques
 - T1546.010 - Event Triggered Execution: AppInit DLLs
