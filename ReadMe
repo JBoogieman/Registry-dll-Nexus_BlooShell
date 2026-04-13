@@ -8,8 +8,8 @@ and DLL injection techniques (AppInit_DLLs, Run Keys) with
 full Blue Team detection instrumentation (Sysmon, Procmon, Autoruns).
 
 ## Team
-- Justin Brueggemann (primary execution)
-- Mason Wagner (review, testing, co-presentation)
+- Justin Brueggemann
+- Mason Wagner
 
 ## Structure
 - `src/` - DLL source code (C++)
