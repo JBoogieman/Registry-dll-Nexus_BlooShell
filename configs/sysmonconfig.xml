@@ -1,0 +1,30 @@
+<Sysmon schemaversion="4.90">
+  <EventFiltering>
+
+    <!-- Event ID 1: Process Creation - Log ALL new processes -->
+    <RuleGroup name="" groupRelation="or">
+      <ProcessCreate onmatch="exclude" />
+    </RuleGroup>
+
+    <!-- Event ID 7: DLL/Image Loaded - Only log OUR DLL -->
+    <RuleGroup name="" groupRelation="or">
+      <ImageLoad onmatch="include">
+        <ImageLoaded condition="contains">heartbeat</ImageLoaded>
+        <ImageLoaded condition="contains">Payloads</ImageLoaded>
+      </ImageLoad>
+    </RuleGroup>
+
+    <!-- Event ID 12/13/14: Registry Changes - Monitor attack keys -->
+    <RuleGroup name="" groupRelation="or">
+      <RegistryEvent onmatch="include">
+        <TargetObject condition="contains">AppInit_DLLs</TargetObject>
+        <TargetObject condition="contains">
+          Image File Execution</TargetObject>
+        <TargetObject condition="contains">
+          CurrentVersion\Run</TargetObject>
+        <TargetObject condition="contains">ServiceDLL</TargetObject>
+      </RegistryEvent>
+    </RuleGroup>
+
+  </EventFiltering>
+</Sysmon>
